@@ -1,0 +1,29 @@
+.timeGridContainer {
+    display: grid;
+    
+    grid-template-columns: 115px 115px;
+    grid-template-rows: repeat(2, .4);
+    /* grid-gap: 10px; */
+    grid-template-areas:
+    "score mistakes"
+    "version version";
+
+  }
+
+.score {
+    grid-area: score;
+}
+.mistakes {
+    grid-area: mistakes;
+}
+.version {
+    grid-area: version;
+}
+
+.item {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 1em;
+    
+    /* margin-bottom: .5em; */
+    }

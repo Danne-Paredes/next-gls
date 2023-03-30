@@ -1,0 +1,138 @@
+.background {
+    background-image: url('../public/dark_leather.png');
+    background-size: 'cover';
+    background-position: 'center';
+    justify-content: center; /* centers horizontally */
+    width: '100%';
+    /* margin-top: 2em; */
+  }
+
+.gridContainer {
+    display: grid;
+    justify-content: center; /* centers horizontally */
+    grid-template-columns: repeat(4, .18fr);
+    grid-template-rows: repeat(6, 100px);
+    grid-gap: 10px;
+    padding-bottom: 2em;
+    grid-template-areas:
+    "logo logo logo logo"
+    "associate associate casino trainer"
+    "game date score mistakes"
+    "event next_step version version"
+    "notes notes notes notes"
+    "submit submit clear clear";
+
+  }
+
+.casino {
+    grid-area: casino;
+}
+
+.date {
+    grid-area: date;
+}
+.associate {
+    grid-area: associate;
+}
+.event {
+    grid-area: event;
+}
+.game {
+    grid-area: game;
+}
+.trainer {
+    grid-area: trainer;
+}
+.mistakes {
+    grid-area: mistakes;
+}
+.score {
+    grid-area: score;
+}
+.version {
+    grid-area: version;
+}
+.notes {
+    grid-area: notes;
+}
+.next_step {
+    grid-area: next_step;
+}
+.submit {
+    grid-area: submit;
+}
+.clear {
+    grid-area: clear;
+}
+/* .time {
+    grid-area: time;
+    
+    padding: 20px;
+    margin: 1em;
+    max-width: 100%;
+} */
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 7em;
+    grid-area: logo;
+    
+}
+
+.logoImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+  
+.item {
+background-color: #ddd;
+box-sizing: border-box;
+/* max-height: 200px; */
+max-width: 100%;
+padding: 20px;
+margin: 1em;
+/* margin-bottom: .5em; */
+}
+
+@media only screen and (max-width: 850px){
+    .gridContainer {
+      grid-template-columns: repeat(4, 150px);
+     
+    }
+  }
+@media only screen and (max-width: 650px){
+    .gridContainer {
+      grid-template-columns: repeat(4, 125px);
+     
+    }
+  }
+
+@media only screen and (max-width: 550px){
+    .gridContainer {
+      grid-template-columns: 180px 180px;
+      grid-gap: 2px;
+      grid-template-rows: 150px;
+      grid-template-areas: 
+      'logo logo'
+      'casino game'
+      'associate date'
+      'trainer event'
+      'score mistakes'
+      'version version'
+      'notes notes'
+      'next_step next_step'
+      'submit clear'
+    }
+    .logo {
+        height: 10em;
+    }
+  }
+
+@media only screen and (max-width: 350px){
+.gridContainer {
+    grid-template-columns: repeat(2, 125px);
+    
+}
+}
