@@ -101,9 +101,6 @@ export const InputEngine = (props) => {
     useEffect(() => {
         setDateValue(today.toISOString().substr(0, 10))
         setInputValues({...inputValues,['date']:today.toISOString().substr(0, 10)})
-        // console.log(secret['web']['client_id'])
-        console.log(dateValue)      
-        console.log(today.toISOString().substr(0, 10))
     }, []);
 
     // When the form is updated..
