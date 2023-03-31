@@ -6,7 +6,7 @@ projectId: 'gls-prod',
 keyFilename: 'credentials/gls-prod-3c982c4028df.json',
 });
 
-export default async (req, res) => {
+export default async function handler(req, res) {
     if (req.method === 'POST') {
         const { uuid,timestamp,ein,associate,casino,event,game,date,trainer,time,mistakes,version,notes,next_step } = req.body;
         

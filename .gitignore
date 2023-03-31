@@ -30,6 +30,6 @@ yarn-error.log*
 
 # vercel
 .vercel
-
+/out
 /credentials
 firebase-debug.log

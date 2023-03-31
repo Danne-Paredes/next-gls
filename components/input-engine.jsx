@@ -74,6 +74,7 @@ export const InputEngine = (props) => {
     const offset = today.getTimezoneOffset();
     today.setTime(today.getTime() - offset * 60 * 1000); // adjust for time zone offset
 
+
     // form data to be submit
     const [inputValues, setInputValues] = useState({
         uuid: uuid,
@@ -99,6 +100,9 @@ export const InputEngine = (props) => {
     }, [inputValues]);
     // on load
     useEffect(() => {
+        const today = new Date();
+        const offset = today.getTimezoneOffset();
+        today.setTime(today.getTime() - offset * 60 * 1000)
         setDateValue(today.toISOString().substr(0, 10))
         setInputValues({...inputValues,['date']:today.toISOString().substr(0, 10)})
     }, []);
