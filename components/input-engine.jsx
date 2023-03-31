@@ -129,24 +129,24 @@ export const InputEngine = (props) => {
         if (name == 'event' && (value == 'Card Speed Assessment' || value == 'Gold Belt - CSA')) {setGames(csa_games)} else {setGames(active_games)}
     }
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
-        console.log(inputValues)
-    }
-    // const handleSubmit = async (e) => {
+    // const handleSubmit = (e)=>{
     //     e.preventDefault();
+    //     console.log(inputValues)
+    // }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
     
-    //     // Send a POST request to the insert-row API route
-    //     await fetch('http://localhost:3000/api/sendData', {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/json' },
-    //       body: JSON.stringify({  ...inputValues }),
-    //     });
-    
-    //     // // Reset the form
-    //     // setName('');
-    //     // setEmail('');
-    //   };
+        // Send a POST request to the insert-row API route
+        await fetch('http://localhost:3000/api/sendData', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({  ...inputValues }),
+        });
+        console.log('click')
+        // // Reset the form
+        // setName('');
+        // setEmail('');
+      };
 
     const clear = (event) => {
         event.target.value = "";

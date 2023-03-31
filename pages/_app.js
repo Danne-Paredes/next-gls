@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }) {
    }, []);
   
   useEffect(() => {
-      if (!isLoggedIn) {
+      if (!checkIsLoggedIn) {
         console.log('login')
       router.push('/login');
     } else {
