@@ -1,17 +1,23 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import InputEngine from '@/components/input-engine'
-// import { getStaticProps } from 'next';
-
-
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home(props) {
+  const router = useRouter();
+  
+  useEffect(() => {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      router.push('/login');
+    }
+  }, [])
+
   const {data} = props;
-  // console.log(data)
+
   return (
     <>
     <Head>
@@ -21,8 +27,12 @@ export default function Home(props) {
     </>
   )
 }
-export async function getStaticProps() {
-  const response = await fetch('http://localhost:3000/api/roster');
+
+export async function getServerSideProps(context) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/roster`);
   const data = await response.json();
-  return { props: { data } };
+
+  return {
+    props: { data },
+  };
 }
